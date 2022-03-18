@@ -1,0 +1,12 @@
+services:
+  nginx-rtmp:
+    image: "enixcoda/nginx-rtmp"
+    ports:
+      - "8081:80"
+      - "1935:1935"
+
+  dnsmasq:
+    image: "enixcoda/dnsmasq"
+    ports:
+      - "53:53/udp"
+      - "8080:8080"
