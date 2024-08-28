@@ -1,6 +1,6 @@
 # PS5 Streamer
 
-This project can stream from PS5 to any platform without extra hardware except one that can run docker, e.g. PC or raspberry pi.
+This project can stream your PS5 game play as a RTMP stream. So that you can stream it to 3rd party platforms like Bilibili.
 
 It is composed of 2 services:
 
@@ -12,11 +12,13 @@ It is composed of 2 services:
 
     This is used to receive rtmp video stream from PS5 and output to rtmp clients.
 
-## Usage
-[Checkout Wiki / 使用教程](https://github.com/EnixCoda/PS5-Streamer/wiki/%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B) (it is in Chinese!)
+## Requirement
 
-## Build
-This project's file structure is extremely simple. You can build your own images very easily if you know basic usages of docker.
+[Docker](https://www.docker.com/) (you can run it on your streaming PC)
+
+## Usage
+
+[Checkout Wiki / 使用教程](https://github.com/EnixCoda/PS5-Streamer/wiki/%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B) (it is in Chinese!)
 
 ## License
 MIT
