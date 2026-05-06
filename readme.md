@@ -12,6 +12,27 @@ It is composed of 2 services:
 
     This is used to receive rtmp video stream from PS5 and output to rtmp clients.
 
+## Architecture
+
+```
+                        ┌─────────────────────────────────────────────────┐
+                        │            Host Machine (192.168.1.5)           │
+                        │                                                 │
+  ┌──────┐  DNS query   │  ┌───────────────────────────┐                  │
+  │      │ ────────────►│  │          dnsmasq          │                  │
+  │      │◄─────────────│  │       (port 53 UDP)       │                  │
+  │      │ 192.168.1.5  │  │                           │                  │
+  │ PS5  │  (hijacked)  │  │ contribute.live-video.net │                  │
+  │      │              │  │       → 192.168.1.5       │                  │
+  │      │              │  └───────────────────────────┘                  │
+  │      │  RTMP stream │  ┌───────────────────────────┐                  │
+  │      │ ────────────►│  │        nginx-rtmp         │                  │
+  │      │  :1935       │  │        (port 1935)        │       pull       │
+  └──────┘              │  │                           │ (port 1935 rtmp) │
+                        │  │       stats: :8081        │────────────────────► OBS ──► Bilibili
+                        │  └───────────────────────────┘                  │
+                        └─────────────────────────────────────────────────┘
+```
 ## Requirement
 
 [Docker](https://www.docker.com/) (you can run it on your streaming PC)
