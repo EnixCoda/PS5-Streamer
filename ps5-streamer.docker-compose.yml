@@ -13,6 +13,7 @@ services:
   # DNS service: udp://localhost:53
   # dnsmasq Web UI: http://localhost:8080/
   dnsmasq:
+    build: ./dnsmasq
     image: "enixcoda/dnsmasq"
     restart: always
     ports:
