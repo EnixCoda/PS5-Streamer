@@ -6,7 +6,7 @@ It is composed of 2 services:
 
 - dnsmasq
 
-    Based on [jpillora/dnsmasq](https://github.com/jpillora/docker-dnsmasq), I updated default configuration to use `114.114.114.114` as the default DNS and added rules for redirecting PS5 streaming data to nginx-rtmp service.
+    Based on Alpine Linux with [webproc](https://github.com/jpillora/webproc) for the web UI. Configured to use `114.114.114.114` as the default DNS and includes rules for redirecting PS5 streaming data to the nginx-rtmp service.
 
 - nginx-rtmp
 
